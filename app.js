@@ -5,9 +5,14 @@
  * @param {Number} n
  * @returns {Number}
  */
-function factorial(n) {
+const n = process.argv[2] || 0;//引数を引っ張ってきて定数nに代入
+
+function factorial(n) {//nを引っ張ってきて階乗計算してresultを返す関数
     let result = 1;
-    // TODO このコメントを消して正しく実装してください。
+    for(let i = 1 ; i <= n ; i++){//階乗計算
+        result = result * i;
+    }
+
     return result;
 }
 
@@ -17,3 +22,4 @@ assert.equal(factorial(2), 2, `2の階乗は2ですが、実際は${factorial(2)
 assert.equal(factorial(3), 6, `3の階乗は6ですが、実際は${factorial(3)}でした`);
 assert.equal(factorial(10), 3628800, `10の階乗は3628800ですが、実際は${factorial(10)}でした`);
 console.log('すべてのテストを通過しました');
+//console.log(factorial(n));
